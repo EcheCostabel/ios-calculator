@@ -4,8 +4,15 @@ import { styles } from './appTheme'
 
 export const CalculatorScreen = () => {
   return (
-    <View>
-        <Text style={styles.text}>Calculadora</Text>
+    <View style={styles.calcContainer}>
+        <Text style={styles.littleResult}> 1,500.00</Text>
+        <Text style={styles.result}> 1,500.00</Text>
+
+        <View>
+            <View style={styles.button}>
+                <Text style={styles.textButton}>C</Text>
+            </View>
+        </View>
     </View>
   )
 }
