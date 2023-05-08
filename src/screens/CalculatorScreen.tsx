@@ -6,8 +6,8 @@ import { ButtonCalc } from '../components/ButtonCalc'
 export const CalculatorScreen = () => {
   return (
     <View style={styles.calcContainer}>
-        <Text style={styles.littleResult}> 1,500.00</Text>
-        <Text style={styles.result}> 1,500.00</Text>
+        <Text style={styles.littleResult}></Text>
+        <Text style={styles.result}> 0</Text>
 
 
             {/* FILA DE BOTONES */}

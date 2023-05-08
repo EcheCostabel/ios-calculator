@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     },
     result: {
         color: 'white',
-        fontSize: 60,
+        fontSize: 70,
         textAlign: 'right',
     },
     littleResult:{
