@@ -3,15 +3,16 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { styles } from '../screens/appTheme';
 
 interface Props {
-    text: String,
-    color?: String,
-    zeroButton?: boolean
+    text: string,
+    color?: string,
+    zeroButton?: boolean,
+    action: (numberText: string) => void
 }
 
                                     //esto quiere decir que si no me mandan el color, por defecto va a ser '#2D2D2D'
-export const ButtonCalc = ({text, color = '#2D2D2D', zeroButton}: Props) => {
+export const ButtonCalc = ({text, color = '#2D2D2D', zeroButton, action}: Props) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => action(text)}>
 
     <View style={{
         ...styles.button,

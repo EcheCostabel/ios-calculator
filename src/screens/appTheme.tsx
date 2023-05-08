@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
         color: 'rgba(255,255,255,0.5)',
         fontSize: 30,
         textAlign: 'right',
+        marginBottom: 5
     },
     calcContainer: {
         flex: 1,
