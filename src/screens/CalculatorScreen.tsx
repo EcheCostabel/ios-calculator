@@ -63,6 +63,16 @@ export const CalculatorScreen = () => {
     };
 
 
+    const btnDelete = () => {
+
+        if(number.length === 1 || number.length === 2 && number.includes('-')) { //esto es para cuando esta en -7 por ejemplo y lo toco, me mande a 0
+            setNumber('0')
+        }else {
+            setNumber(number.slice(0, -1))
+        }
+    }
+
+
   return (
     <View style={styles.calcContainer}>
         <Text style={styles.littleResult}>{prevNumber}</Text>
@@ -73,7 +83,7 @@ export const CalculatorScreen = () => {
         <View style={styles.row}>
            <ButtonCalc  text='AC' color='#9B9B9B' action={clean}/>
            <ButtonCalc  text='+/-' color='#9B9B9B' action={positiveNegative}/>
-           <ButtonCalc  text='%' color='#9B9B9B' action={clean}/>
+           <ButtonCalc  text='del' color='#9B9B9B' action={btnDelete}/>
            <ButtonCalc  text='/' color='#FF9427' action={clean}/>    
         </View>
 
