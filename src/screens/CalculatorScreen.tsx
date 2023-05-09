@@ -93,22 +93,53 @@ export const CalculatorScreen = () => {
     const dividirButton = () => {
         changeNumToPrev()
         lastOperation.current = Operadores.dividir;
-    }
+    };
 
     const multiplicarButton = () => {
         changeNumToPrev()
         lastOperation.current = Operadores.multiplicar;
-    }
+    };
 
     const sumarButton = () => {
         changeNumToPrev()
         lastOperation.current = Operadores.sumar;
-    }
+    };
 
     const restarButton = () => {
         changeNumToPrev()
         lastOperation.current = Operadores.restar;
-    }
+    };
+
+
+    const operation = ( ) => {
+
+        const num1 = Number(number);   //Paso estos datos a Number para poder hacer las operaciones porque estan en strings
+        const num2 = Number(prevNumber);
+
+        switch (lastOperation.current)  {
+
+            case Operadores.sumar :
+                setNumber(`${num1 + num2}`);
+                break;
+
+
+            case Operadores.restar:
+                setNumber(`${num2 - num1}`);
+                break;
+
+            
+            case Operadores.multiplicar:
+                setNumber(`${num1 * num2}`);
+                break;
+
+
+            case Operadores.dividir:
+                setNumber(`${num2 / num1}`);
+                break;
+            
+        }
+        setprevNumber('0');
+    }   
 
 
   return (
@@ -159,7 +190,7 @@ export const CalculatorScreen = () => {
         <View style={styles.row}>
            <ButtonCalc  text='0' zeroButton={true} action={displayNumbers}/>
            <ButtonCalc  text='.' action={displayNumbers}/>
-           <ButtonCalc  text='=' color='#FF9427' action={clean} />    
+           <ButtonCalc  text='=' color='#FF9427' action={operation} />    
         </View>
     </View>
   )
